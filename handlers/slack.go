@@ -17,6 +17,10 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+func HelloHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Hello! This is the Timestamp Service.")
+}
+
 func SendReportHandler(w http.ResponseWriter, r *http.Request) {
 	totalMonthlyHoursStr := os.Getenv("TOTAL_MONTHLY_HOURS")
 	webhook := os.Getenv("SLACK_WEBHOOK_URL")

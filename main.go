@@ -13,6 +13,7 @@ func main() {
 
 	http.HandleFunc("/register", handlers.RegisterHandler)
 	http.HandleFunc("/slack/report", handlers.SendReportHandler)
+	http.HandleFunc("/hello", handlers.HelloHandler)
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "Welcome to the Timestamp Service!")
